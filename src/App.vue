@@ -3,6 +3,7 @@ div#app(@mousemove='updateCoordinates')
   SiteNav
   PeculiarAlbum
   ShopVinyl
+  JapaneseSentence
 </template>
 
 <script>
@@ -11,7 +12,9 @@ export default {
   components: {
     SiteNav: () => import('./components/SiteNav'),
     PeculiarAlbum: () => import('./components/PeculiarAlbum'),
-    ShopVinyl: () => import('./components/ShopVinyl')
+    ShopVinyl: () => import('./components/ShopVinyl'),
+    JapaneseSentence: () => import('./components/JapaneseSentence')
+
   },
   methods: {
     updateCoordinates (event) {

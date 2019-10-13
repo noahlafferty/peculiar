@@ -28,6 +28,7 @@ export default {
   name: 'App',
   data () {
     return {
+      parallaxDisabled: false,
       maxWidth: window.innerWidth,
       scaleFactor: 0.02,
       mouse: {
@@ -69,6 +70,9 @@ export default {
     }
   },
   mounted () {
+    // 50/50 chance to get a random effect
+    if (Math.random() < 0.5) this.parallaxDisabled = true
+
     this.$nextTick(() => {
       this.updateWindowSize()
       window.addEventListener('resize', this.updateWindowSize)

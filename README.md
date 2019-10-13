@@ -1,4 +1,4 @@
-# ode-to-the-peculiar
+# Ode to the Peculiar
 
 ## Project setup
 ```

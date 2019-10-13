@@ -11,6 +11,7 @@ export default {
 
 <style lang='scss' scoped>
 img {
+  display: block;
   width: 100%;
 }
 </style>

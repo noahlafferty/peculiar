@@ -9,6 +9,7 @@ div#app(@mousemove='updateCoordinates')
     a(href='https://www.instagram.com/modestaband/', target='_blank') Instagram
     a(href='https://www.look-up-records.com/blog/2018/1/8/review-vhs-by-modesta', target='_blank') News
   PeculiarAlbum
+  ShopVinyl
 </template>
 
 <script>

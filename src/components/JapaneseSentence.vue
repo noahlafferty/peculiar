@@ -1,7 +1,7 @@
 <template lang='pug'>
 div.japanese-sentence__wrapper
-    div.japanese-sentence
-        HiddenSentence(sentence='This is a big sentence This is a big sentence This is a big sentence This is a big sentence This is a big sentence This is a big sentence This is a big sentence This is a big sentence This is a big sentence This is a big sentence This is a big sentence ')
+  div.japanese-sentence
+    HiddenSentence(sentence='This is a big sentence This is a big sentence This is a big sentence This is a big sentence This is a big sentence This is a big sentence This is a big sentence This is a big sentence This is a big sentence This is a big sentence This is a big sentence ')
 </template>
 
 <script>

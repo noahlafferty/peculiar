@@ -1,6 +1,6 @@
 <template lang='pug'>
-div
-    HiddenWord(v-for='word in sentenceArray', :word='word')
+p
+  HiddenWord(v-for='word in sentenceArray', :word='word')
 </template>
 
 <script>

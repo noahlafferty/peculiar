@@ -9,9 +9,6 @@ div#app(@mousemove='updateCoordinates')
     a(href='https://www.instagram.com/modestaband/', target='_blank') Instagram
     a(href='https://www.look-up-records.com/blog/2018/1/8/review-vhs-by-modesta', target='_blank') News
   PeculiarAlbum
-  div.swirl
-    a.vinyl
-
 </template>
 
 <script>
@@ -19,7 +16,7 @@ export default {
   name: 'App',
   components: {
     PeculiarAlbum: () => import('./components/PeculiarAlbum'),
-    ImageSection: () => import('./components/ImageSection')
+    ShopVinyl: () => import('./components/ShopVinyl')
   },
   methods: {
     updateCoordinates (event) {
@@ -148,11 +145,8 @@ html, body {
   }
 
   .spin {
-    transition: transform 1s;
-
     &:hover {
-      animation: spin 1s infinite;
-      transform-style: preserve-3d;
+      animation: spin 30s;
     }
   }
 }
@@ -168,28 +162,6 @@ html, body {
 
   100% {
     transform: rotate3d(0, 0, 0, 0);
-  }
-}
-
-.swirl {
-  width: 100%;
-  height: 100vh;
-  box-sizing: border-box;
-
-  background: url('/images/iri.jpg') no-repeat center center;
-  background-size: 100% 100%;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  .vinyl {
-    flex: 1 20rem;
-    height: 20rem;
-    background: url('/images/vinyl.png') no-repeat center center;
-    background-size: auto 100%;
-
-    cursor: pointer;
   }
 }
 </style>

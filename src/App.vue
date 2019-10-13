@@ -3,7 +3,7 @@ div#app(@mousemove='updateCoordinates')
   nav.sitenav.left
     a(href='https://open.spotify.com/artist/7sO3BcevkIUXu5NcUNBVfO?si=NRbFDvtGQEamdtZdjQQk7Q', target='_blank') Spotify
     a(href='https://www.facebook.com/modestaband/', target='_blank') Facebook
-    a(href='https://soundcloud.com/modestaband', target='_blank') SoundCloud
+    a.spin(href='https://soundcloud.com/modestaband', target='_blank') SoundCloud
   nav.sitenav.right
     a(href='https://twitter.com/modestaband', target='_blank') Twitter
     a(href='https://www.instagram.com/modestaband/', target='_blank') Instagram
@@ -120,6 +120,8 @@ html, body {
   transform: rotate(-90deg);
   transform-origin: 0 100%;
 
+  perspective: 1000px;
+
   a {
     color: $black;
     text-decoration: none;
@@ -143,6 +145,29 @@ html, body {
     top: 100%;
     left: auto;
     right: 0;
+  }
+
+  .spin {
+    transition: transform 1s;
+
+    &:hover {
+      animation: spin 1s infinite;
+      transform-style: preserve-3d;
+    }
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate3d(0, 0, 0, 0);
+  }
+
+  50% {
+    transform: rotate3d(1, 1, -1, 240deg);
+  }
+
+  100% {
+    transform: rotate3d(0, 0, 0, 0);
   }
 }
 

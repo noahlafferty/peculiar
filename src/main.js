@@ -2,10 +2,12 @@ import Vue from 'vue'
 import App from './App.vue'
 
 import Vuex from 'vuex'
+import VueScrollTo from 'vue-scrollto'
 
 Vue.config.productionTip = false
 
 Vue.use(Vuex)
+Vue.use(VueScrollTo)
 
 const store = new Vuex.Store({
   state: {

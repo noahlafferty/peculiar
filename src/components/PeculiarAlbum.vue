@@ -176,27 +176,4 @@ $gradient-blue: #0060ff;
   background: url('/images/marble.jpg') no-repeat center center;
   background-size: cover;
 }
-
-.ode {
-  display: none;
-  position: absolute;
-  width: 100%;
-  top: 0;
-  right: 20%;
-  height: 20%;
-  line-height: 200%;
-  margin: 0;
-
-  font-family: 'Dancing Script', cursive;
-  font-size: 250%;
-  font-weight: 700;
-  background: url('/images/gold.jpg') no-repeat center center;
-
-  transform: rotate(-90deg);
-  transform-origin: 100% 0;
-
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
 </style>

@@ -17,7 +17,7 @@ export default {
   computed: {
     secret() {
       let s = ''
-        let nSecretChars = Math.ceil(this.word.length  * (2/3))
+        let nSecretChars = Math.ceil(this.word.length  * (3/5))
         for (let i=0; i<nSecretChars; i++){
           let index = Math.floor(Math.random() * this.charSet.length)
           s += this.charSet[index]

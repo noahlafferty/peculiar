@@ -30,8 +30,6 @@ export default {
   top: calc(100% - 4rem);
   left: 4rem;
 
-  font-weight: bold;
-
   transform: rotate(-90deg);
   transform-origin: 0 100%;
 

@@ -1,7 +1,18 @@
 <template lang='pug'>
 div.japanese-sentence__wrapper
   div.japanese-sentence
-    HiddenSentence(sentence='This is a big sentence This is a big sentence This is a big sentence This is a big sentence This is a big sentence This is a big sentence This is a big sentence This is a big sentence This is a big sentence This is a big sentence This is a big sentence ')
+    HiddenSentence(sentence="woke up in Dover Hills tonight")
+    HiddenSentence(sentence="gazing the starts in the sunrise")
+    HiddenSentence(sentence="Whatever deep divine")
+    HiddenSentence(sentence="Left you intensely mad")
+    HiddenSentence(sentence="woke up in Dover Hills tonight")
+    HiddenSentence(sentence="and hit a wall")
+    HiddenSentence(sentence="you want it all")
+    HiddenSentence(sentence="you won't come back")
+    HiddenSentence(sentence="you won't come back")
+
+
+
 </template>
 
 <script>
@@ -23,6 +34,7 @@ export default {
 }
 .japanese-sentence{
     max-width: 30vw;
-    word-break: break-word;
+    word-break: break-all;
+    text-align: left;
 }
 </style>

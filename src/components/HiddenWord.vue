@@ -42,7 +42,7 @@ export default {
     hidden(){
       setTimeout(()=> {
         this.hidden = true
-      }, this.getRandomResetTime(15, 20))
+      }, this.getRandomResetTime(20, 35))
     }
   },
   mounted() {

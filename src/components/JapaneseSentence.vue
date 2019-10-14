@@ -39,12 +39,16 @@ export default {
 </script>
 
 <style lang='scss'>
+@import '../scss/_mixins';
+
 .japanese-sentence__wrapper {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  min-height: 100vh;
   width: 100vw;
+  padding: 20vh 4rem;
+  box-sizing: border-box;
 }
 
 .song {
@@ -55,11 +59,17 @@ export default {
 }
 
 .japanese-sentence {
-  max-width: 80vw;
-  word-break: break-all;
-  text-align: left;
   display:grid;
   grid-template-columns: 1fr 1fr;
   grid-gap: 8vh 12vw; 
+
+  max-width: 90vw;
+
+  word-break: break-all;
+  text-align: left;
+  
+  @include respond-to('small') {
+    grid-template-columns: 1fr;
+  }
 }
 </style>

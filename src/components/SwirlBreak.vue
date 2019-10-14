@@ -11,7 +11,7 @@ export default {
 <style lang='scss'>
 .swirl-break {
   width: 100%;
-  height: 100vh;
+  height: 50vh;
   box-sizing: border-box;
 
   background: url('/images/iri.jpg') no-repeat center center;

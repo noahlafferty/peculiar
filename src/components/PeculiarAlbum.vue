@@ -10,6 +10,7 @@ div.peculiar-album__wrapper
           div.felt__wrapper
             div.felt
       div.marble
+      a.vinyl
 </template>
 
 <script>
@@ -81,6 +82,7 @@ $gradient-blue: #0060ff;
   position: relative;
   width: 60%;
   top: 0;
+  z-index: 2;
   box-shadow: 0px 5px 25px rgba(0, 0, 0, .25);
 
   cursor: pointer;
@@ -175,4 +177,25 @@ $gradient-blue: #0060ff;
   background: url('/images/marble.jpg') no-repeat center center;
   background-size: cover;
 }
+
+.vinyl {
+  position:absolute;
+  $vinyl-size: 90%;
+  flex: 0 $vinyl-size;
+  height: $vinyl-size;
+  width: $vinyl-size;
+  top: 0;
+  right: 50%;
+  // transform:translateY(50%);
+
+  background: url('/images/vinyl.png') no-repeat center center;
+  background-size: auto 100%;
+
+  border-radius: 50%;
+
+  z-index: 1;
+
+  cursor: pointer;
+}
+
 </style>

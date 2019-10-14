@@ -1,6 +1,6 @@
 <template lang='pug'>
 div.shop-vinyl
-  a.vinyl
+  
 </template>
 
 <script>
@@ -19,18 +19,9 @@ export default {
   background-size: 100% 100%;
 
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  justify-content: flex-start;
   align-items: center;
 
-  .vinyl {
-    flex: 0 20rem;
-    height: 20rem;
-    background: url('/images/vinyl.png') no-repeat center center;
-    background-size: auto 100%;
-
-    border-radius: 50%;
-
-    cursor: pointer;
-  }
 }
 </style>

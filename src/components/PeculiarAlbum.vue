@@ -10,7 +10,8 @@ div.peculiar-album__wrapper
           div.felt__wrapper
             div.felt
       div.marble
-      a.vinyl
+  a.vinyl(:style='{ "max-width": maxWidth + "px" }', href='https://i.pinimg.com/originals/d9/b0/de/d9b0dea369b823e22766782b9518e600.jpg', target='_blank')
+    div.vinyl__content
 </template>
 
 <script>
@@ -74,6 +75,7 @@ $gradient-blue: #0060ff;
   display: flex;
   justify-content: center;
   align-items: center;
+
   width: 100%;
   height: 100vh;
 }
@@ -82,8 +84,10 @@ $gradient-blue: #0060ff;
   position: relative;
   width: 60%;
   top: 0;
-  z-index: 2;
+
   box-shadow: 0px 5px 25px rgba(0, 0, 0, .25);
+  
+  z-index: 2;
 
   cursor: pointer;
 
@@ -110,6 +114,34 @@ $gradient-blue: #0060ff;
     background-size: cover;
 
     z-index: 100;
+  }
+}
+
+.vinyl {
+  position: absolute;
+  width: 60%;
+
+  border-radius: 50%;
+
+  z-index: 1;
+
+  transform: translateX(40%);
+
+  cursor: pointer;
+
+  &::after {
+    content: '';
+    display: block;
+    padding-bottom: 100%;
+  }
+
+  .vinyl__content {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+  
+    background: url('/images/vinyl.png') no-repeat center center;
+    background-size: auto 100%;
   }
 }
 
@@ -177,25 +209,4 @@ $gradient-blue: #0060ff;
   background: url('/images/marble.jpg') no-repeat center center;
   background-size: cover;
 }
-
-.vinyl {
-  position:absolute;
-  $vinyl-size: 90%;
-  flex: 0 $vinyl-size;
-  height: $vinyl-size;
-  width: $vinyl-size;
-  top: 0;
-  right: 50%;
-  // transform:translateY(50%);
-
-  background: url('/images/vinyl.png') no-repeat center center;
-  background-size: auto 100%;
-
-  border-radius: 50%;
-
-  z-index: 1;
-
-  cursor: pointer;
-}
-
 </style>

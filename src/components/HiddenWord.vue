@@ -10,21 +10,30 @@ export default {
   props: ['word'],
   data() {
     return { 
-      hidden: true,
+      secret: null,
+      hidden: (Math.random() > 0.65) ? false : true,
       charSet: ["歯", "型", "バ", "ァ", "ニ", "ボ", "ソ", "と", "あ", "ぽ", "千", "喜", "良", "タ", "ツ"]
     }
   },
-  computed: {
-    secret() {
+  methods: {
+    setSecret() {
       let s = ''
       let nSecretChars = Math.ceil(this.word.length  * (3/5))
       for (let i=0; i<nSecretChars; i++){
         let index = Math.floor(Math.random() * this.charSet.length)
         s += this.charSet[index]
       }
-      return s
+      this.secret = s
+    },
+    refreshSecret(){
+      if (Math.random() > 0.65){
+        this.setSecret()
+      }
     }
-  }
+  },
+  mounted() {
+    setInterval(this.setSecret, 300)
+  } 
 }
 </script>
 

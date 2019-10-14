@@ -2,6 +2,7 @@
 div#lyrics.japanese-sentence__wrapper
   div.japanese-sentence
     div.song(v-for='song in songs')
+      h3 {{song.title}}
       HiddenSentence(v-for='(line, index) in song.lyrics', :sentence='line', :key='index')
 </template>
 
@@ -14,21 +15,21 @@ export default {
   data(){
     return {
       songs: [
-        {title: 'Opus', 
+        {title: '1. Opus', 
         lyrics: ['he grew certain', 'that when he went away', 'he had another day', 'the sensei', 'whatever you know', 'you had to let it go', 
         'in vain', 'whenever you need a break', 'for your soul', 'time passed slower', 'they forgot the name', 
         'of your story', 'maybe I\'m walking in a dream I had lately', 'felt strange', 'its like we have to take a break', 'and let go', 
         'ladies and gentlement', 'you are listening to radio 420.0', 'the height of radio music', 'bringing you the dankest', 'most lucious', 'more delicious', 'hits of music']
         },
-        {title: 'Ode to the Peculiar', 
+        {title: '2. Ode to the Peculiar', 
         lyrics: ['woke up in Dover Hills tonight', 'gazing the stars in the sunrise', 'whatever deep divine', 
          'left you intensely mad', 'woke up in dover hills tonight', 'and hit a wall', 'you want it all', 
          'you won\'t come back', 'you won\'t come back']
         },
-        {title: 'Violet Fields', 
+        {title: '3. Violet Fields', 
         lyrics: ['violet field', 'she\s a roadtrip', 'takes me back', 'and I don\'t know why', 'violet fields', 'she\'s up to something', 'pulls me back', 'to her imagiation']
         },
-        {title: 'One star Galaxy', 
+        {title: '4. One Star Galaxy', 
         lyrics: ['one star galaxy', 'thrown out of space and reality']
         }
       ]
@@ -44,6 +45,13 @@ export default {
   align-items: center;
   height: 100vh;
   width: 100vw;
+}
+
+.song {
+  h3 {
+    font-weight: 700;
+    margin-bottom: .5rem;
+  }
 }
 
 .japanese-sentence {

@@ -35,6 +35,13 @@ export default {
       return this.charSet[Math.floor(Math.random() * this.charSet.length)]
     }
   },
+  watch: {
+    hidden(){
+      setTimeout(()=> {
+        this.hidden = true
+      }, 20000)
+    }
+  },
   mounted() {
     this.setSecret()
     setInterval(this.refreshSecret, 300)

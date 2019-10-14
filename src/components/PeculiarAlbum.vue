@@ -140,7 +140,7 @@ $gradient-blue: #0060ff;
     width: 100%;
     height: 100%;
 
-    animation: rotate 10s infinite linear;
+    animation: rotate 30s infinite linear;
   
     background: url('/images/vinyl.png') no-repeat center center;
     background-size: auto 100%;

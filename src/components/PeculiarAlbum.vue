@@ -1,6 +1,6 @@
 <template lang='pug'>
 div.peculiar-album__wrapper
-  a.ode__wrapper(:style='{ "max-width": maxWidth + "px" }', href='https://open.spotify.com/artist/7sO3BcevkIUXu5NcUNBVfO?si=NRbFDvtGQEamdtZdjQQk7Q', target='_blank')
+  a.ode__wrapper(:style='{ "max-width": maxWidth + "px" }', v-scroll-to='"#lyrics"')
     div.noise__wrapper
     div.ode__content
       div.gold__wrapper

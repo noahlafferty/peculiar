@@ -37,7 +37,6 @@ export default {
 
   perspective: 1000px;
 
-
   a {
     color: $black;
     text-decoration: none;

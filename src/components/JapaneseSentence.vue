@@ -1,8 +1,8 @@
 <template lang='pug'>
-div.japanese-sentence__wrapper
+div#lyrics.japanese-sentence__wrapper
   div.japanese-sentence
     div.song(v-for='song in songs')
-      HiddenSentence(v-for='line in song.lyrics', :sentence='line')
+      HiddenSentence(v-for='(line, index) in song.lyrics', :sentence='line', :key='index')
 </template>
 
 <script>

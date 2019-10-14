@@ -23,5 +23,6 @@ export default {
 }
 .japanese-sentence{
     max-width: 30vw;
+    word-break: break-word;
 }
 </style>

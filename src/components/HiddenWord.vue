@@ -11,14 +11,13 @@ export default {
   data() {
     return { 
       hidden: true,
-      
       charSet: ["歯", "型", "バ", "ァ", "ニ", "ボ", "ソ", "と", "あ", "ぽ", "千", "喜", "良", "タ", "ツ"]
     }
   },
   computed: {
     secret() {
       let s = ''
-        let nSecretChars = Math.ceil(this.word.length  * (1/3))
+        let nSecretChars = Math.ceil(this.word.length  * (2/3))
         for (let i=0; i<nSecretChars; i++){
           let index = Math.floor(Math.random() * this.charSet.length)
           s += this.charSet[index]

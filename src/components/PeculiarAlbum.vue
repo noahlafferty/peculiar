@@ -139,9 +139,21 @@ $gradient-blue: #0060ff;
     position: absolute;
     width: 100%;
     height: 100%;
+
+    animation: rotate 10s infinite linear;
   
     background: url('/images/vinyl.png') no-repeat center center;
     background-size: auto 100%;
+  }
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0);
+  }
+
+  100% {
+    transform: rotate(360deg)
   }
 }
 

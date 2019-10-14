@@ -16,25 +16,27 @@ export default {
     }
   },
   methods: {
-    setSecret() {
+    setSecret () {
       let s = ''
       let nSecretChars = Math.ceil(this.word.length  * (3/5))
       for (let i=0; i<nSecretChars; i++){
-        let index = Math.floor(Math.random() * this.charSet.length)
-        s += this.charSet[index]
+        s += this.generateCharacter()
       }
       this.secret = s
     },
-    refreshSecret(){
-      if (!this.secret) {
-        this.setSecret()
+    refreshSecret () {
+      for (let i = 0; i < this.secret.length; i++) {
+        if (Math.random() < 0.05){
+          this.secret = this.secret.substr(0, i) + this.generateCharacter() + this.secret.substr(i + 1)
+        }
       }
-      else if (Math.random() > 0.65){
-        this.setSecret()
-      }
+    },
+    generateCharacter () {
+      return this.charSet[Math.floor(Math.random() * this.charSet.length)]
     }
   },
   mounted() {
+    this.setSecret()
     setInterval(this.refreshSecret, 300)
   } 
 }

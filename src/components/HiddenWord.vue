@@ -33,13 +33,16 @@ export default {
     },
     generateCharacter () {
       return this.charSet[Math.floor(Math.random() * this.charSet.length)]
+    },
+    getRandomResetTime (minSeconds, maxSeconds) {
+      return (Math.random() * (maxSeconds - minSeconds) + minSeconds) * 1000
     }
   },
   watch: {
     hidden(){
       setTimeout(()=> {
         this.hidden = true
-      }, 20000)
+      }, this.getRandomResetTime(15, 20))
     }
   },
   mounted() {

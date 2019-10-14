@@ -26,13 +26,13 @@ export default {
       this.secret = s
     },
     refreshSecret(){
-      if (Math.random() > 0.65){
+      if (Math.random() > 2){
         this.setSecret()
       }
     }
   },
   mounted() {
-    setInterval(this.setSecret, 300)
+    setInterval(this.refreshSecret, 300)
   } 
 }
 </script>

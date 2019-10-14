@@ -11,7 +11,7 @@ export default {
   data() {
     return { 
       secret: null,
-      hidden: (Math.random() > 0.65) ? false : true,
+      hidden: (Math.random() > 0.25) ? false : true,
       charSet: ["歯", "型", "バ", "ァ", "ニ", "ボ", "ソ", "と", "あ", "ぽ", "千", "喜", "良", "タ", "ツ"]
     }
   },
@@ -33,6 +33,13 @@ export default {
     },
     generateCharacter () {
       return this.charSet[Math.floor(Math.random() * this.charSet.length)]
+    }
+  },
+  watch: {
+    hidden(){
+      setTimeout(()=> {
+        this.hidden = true
+      }, 20000)
     }
   },
   mounted() {

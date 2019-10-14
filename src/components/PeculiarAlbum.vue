@@ -10,7 +10,7 @@ div.peculiar-album__wrapper
           div.felt__wrapper
             div.felt
       div.marble
-  a.vinyl(:style='{ "max-width": maxWidth + "px" }', href='https://i.pinimg.com/originals/d9/b0/de/d9b0dea369b823e22766782b9518e600.jpg', target='_blank')
+  a.vinyl(:style='{ "max-width": maxWidth + "px" }', href='https://i.pinimg.com/originals/d9/b0/de/d9b0dea369b823e22766782b9518e600.jpg')
     div.vinyl__content
 </template>
 

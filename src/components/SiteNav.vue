@@ -32,8 +32,11 @@ export default {
 
   transform: rotate(-90deg);
   transform-origin: 0 100%;
+  
+  z-index: 1000;
 
   perspective: 1000px;
+
 
   a {
     color: $black;

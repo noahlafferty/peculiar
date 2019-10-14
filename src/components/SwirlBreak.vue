@@ -1,26 +1,20 @@
 <template lang='pug'>
-div.shop-vinyl
+div.swirl-break
 </template>
 
 <script>
 export default {
-  name: 'ShopVinyl'
+  name: 'SwirlBreak'
 }
 </script>
 
 <style lang='scss'>
-.shop-vinyl {
+.swirl-break {
   width: 100%;
   height: 100vh;
   box-sizing: border-box;
 
   background: url('/images/iri.jpg') no-repeat center center;
   background-size: 100% 100%;
-
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
-
 }
 </style>

@@ -2,7 +2,7 @@
 div#app(@mousemove='updateCoordinates')
   SiteNav
   PeculiarAlbum
-  ShopVinyl
+  SwirlBreak
   JapaneseSentence
 </template>
 
@@ -12,7 +12,7 @@ export default {
   components: {
     SiteNav: () => import('./components/SiteNav'),
     PeculiarAlbum: () => import('./components/PeculiarAlbum'),
-    ShopVinyl: () => import('./components/ShopVinyl'),
+    SwirlBreak: () => import('./components/SwirlBreak'),
     JapaneseSentence: () => import('./components/JapaneseSentence')
   },
   methods: {

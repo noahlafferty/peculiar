@@ -9,7 +9,6 @@ div.peculiar-album__wrapper
             div.flowers(:style='{ transform: `translate3d(${xOffset}%, ${yOffset}%, 0px` }')
           div.felt__wrapper
             div.felt
-      h3.ode Ode to the Peculiar
       div.marble
 </template>
 

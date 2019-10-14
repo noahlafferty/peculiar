@@ -14,25 +14,22 @@ export default {
   data(){
     return {
       songs: [
-        {title: 'song 1', 
+        {title: 'Opus', 
+        lyrics: ['he grew certain', 'that when he went away', 'he had another day', 'the sensei', 'whatever you know', 'you had to let it go', 
+        'in vain', 'whenever you need a break', 'for your soul', 'time passed slower', 'they forgot the name', 
+        'of your story', 'maybe I\'m walking in a dream I had lately', 'felt strange', 'its like we have to take a break', 'and let go', 
+        'ladies and gentlement', 'you are listening to radio 420.0', 'the height of radio music', 'bringing you the dankest', 'most lucious', 'more delicious', 'hits of music']
+        },
+        {title: 'Ode to the Peculiar', 
         lyrics: ['woke up in Dover Hills tonight', 'gazing the stars in the sunrise', 'whatever deep divine', 
          'left you intensely mad', 'woke up in dover hills tonight', 'and hit a wall', 'you want it all', 
          'you won\'t come back', 'you won\'t come back']
         },
-        {title: 'song 2', 
-        lyrics: ['woke up in Dover Hills tonight', 'gazing the stars in the sunrise', 'whatever deep divine', 
-         'left you intensely mad', 'woke up in dover hills tonight', 'and hit a wall', 'you want it all', 
-         'you won\'t come back', 'you won\'t come back']
+        {title: 'Violet Fields', 
+        lyrics: ['violet field', 'she\s a roadtrip', 'takes me back', 'and I don\'t know why', 'violet fields', 'she\'s up to something', 'pulls me back', 'to her imagiation']
         },
-        {title: 'song 3', 
-        lyrics: ['woke up in Dover Hills tonight', 'gazing the stars in the sunrise', 'whatever deep divine', 
-         'left you intensely mad', 'woke up in dover hills tonight', 'and hit a wall', 'you want it all', 
-         'you won\'t come back', 'you won\'t come back']
-        },
-        {title: 'song 4', 
-        lyrics: ['woke up in Dover Hills tonight', 'gazing the stars in the sunrise', 'whatever deep divine', 
-         'left you intensely mad', 'woke up in dover hills tonight', 'and hit a wall', 'you want it all', 
-         'you won\'t come back', 'you won\'t come back']
+        {title: 'One star Galaxy', 
+        lyrics: ['one star galaxy', 'thrown out of space and reality']
         }
       ]
     }

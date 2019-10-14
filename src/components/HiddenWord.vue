@@ -26,7 +26,10 @@ export default {
       this.secret = s
     },
     refreshSecret(){
-      if (Math.random() > 0.65){
+      if (!this.secret) {
+        this.setSecret()
+      }
+      else if (Math.random() > 0.65){
         this.setSecret()
       }
     }

@@ -10,9 +10,6 @@ div.japanese-sentence__wrapper
     HiddenSentence(sentence="you want it all")
     HiddenSentence(sentence="you won't come back")
     HiddenSentence(sentence="you won't come back")
-
-
-
 </template>
 
 <script>
@@ -25,16 +22,17 @@ export default {
 </script>
 
 <style lang='scss'>
-.japanese-sentence__wrapper{
-    display:flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    width: 100vw;
+.japanese-sentence__wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
 }
-.japanese-sentence{
-    max-width: 30vw;
-    word-break: break-all;
-    text-align: left;
+
+.japanese-sentence {
+  max-width: 30vw;
+  word-break: break-all;
+  text-align: left;
 }
 </style>

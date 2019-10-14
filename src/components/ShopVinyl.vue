@@ -1,6 +1,6 @@
 <template lang='pug'>
 div.shop-vinyl
-  a.vinyl
+  a.vinyl(href='https://i.pinimg.com/originals/d9/b0/de/d9b0dea369b823e22766782b9518e600.jpg', target='_blank')
 </template>
 
 <script>

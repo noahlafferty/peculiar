@@ -11,9 +11,9 @@ export default {
   },
   props: ['sentence'], 
   computed: {
-      sentenceArray() {
-          return this.sentence.split(' ')
-      }
+    sentenceArray() {
+      return this.sentence.split(' ')
+    }
   }
 }
 </script>

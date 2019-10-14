@@ -14,7 +14,6 @@ export default {
     PeculiarAlbum: () => import('./components/PeculiarAlbum'),
     ShopVinyl: () => import('./components/ShopVinyl'),
     JapaneseSentence: () => import('./components/JapaneseSentence')
-
   },
   methods: {
     updateCoordinates (event) {

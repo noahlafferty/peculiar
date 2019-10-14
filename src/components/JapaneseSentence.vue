@@ -1,15 +1,8 @@
 <template lang='pug'>
 div.japanese-sentence__wrapper
   div.japanese-sentence
-    HiddenSentence(sentence="woke up in Dover Hills tonight")
-    HiddenSentence(sentence="gazing the starts in the sunrise")
-    HiddenSentence(sentence="Whatever deep divine")
-    HiddenSentence(sentence="Left you intensely mad")
-    HiddenSentence(sentence="woke up in Dover Hills tonight")
-    HiddenSentence(sentence="and hit a wall")
-    HiddenSentence(sentence="you want it all")
-    HiddenSentence(sentence="you won't come back")
-    HiddenSentence(sentence="you won't come back")
+    div.song(v-for='song in songs')
+      HiddenSentence(v-for='line in song.lyrics', :sentence='line')
 </template>
 
 <script>
@@ -17,6 +10,32 @@ export default {
   name: 'JapaneseSentence',
   components: {
     HiddenSentence: () => import('./HiddenSentence')
+  },
+  data(){
+    return {
+      songs: [
+        {title: 'song 1', 
+        lyrics: ['woke up in Dover Hills tonight', 'gazing the stars in the sunrise', 'whatever deep divine', 
+         'left you intensely mad', 'woke up in dover hills tonight', 'and hit a wall', 'you want it all', 
+         'you won\'t come back', 'you won\'t come back']
+        },
+        {title: 'song 2', 
+        lyrics: ['woke up in Dover Hills tonight', 'gazing the stars in the sunrise', 'whatever deep divine', 
+         'left you intensely mad', 'woke up in dover hills tonight', 'and hit a wall', 'you want it all', 
+         'you won\'t come back', 'you won\'t come back']
+        },
+        {title: 'song 3', 
+        lyrics: ['woke up in Dover Hills tonight', 'gazing the stars in the sunrise', 'whatever deep divine', 
+         'left you intensely mad', 'woke up in dover hills tonight', 'and hit a wall', 'you want it all', 
+         'you won\'t come back', 'you won\'t come back']
+        },
+        {title: 'song 4', 
+        lyrics: ['woke up in Dover Hills tonight', 'gazing the stars in the sunrise', 'whatever deep divine', 
+         'left you intensely mad', 'woke up in dover hills tonight', 'and hit a wall', 'you want it all', 
+         'you won\'t come back', 'you won\'t come back']
+        }
+      ]
+    }
   }
 }
 </script>
@@ -31,8 +50,11 @@ export default {
 }
 
 .japanese-sentence {
-  max-width: 30vw;
+  max-width: 80vw;
   word-break: break-all;
   text-align: left;
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 8vh 12vw; 
 }
 </style>

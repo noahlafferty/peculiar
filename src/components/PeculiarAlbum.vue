@@ -1,6 +1,6 @@
 <template lang='pug'>
 div.peculiar-album__wrapper
-  a.ode__wrapper(:style='{ "max-width": maxWidth + "px" }', v-scroll-to='"#lyrics"')
+  a.ode__wrapper(:style='{ "max-width": maxWidth + "px" }', v-scroll-to='"#lyrics"', @mouseover='hover = true', @mouseleave='hover = false')
     div.noise__wrapper
     div.ode__content
       div.gold__wrapper
@@ -10,7 +10,7 @@ div.peculiar-album__wrapper
           div.felt__wrapper
             div.felt
       div.marble
-  a.vinyl(:style='{ "max-width": maxWidth + "px" }')
+  a.vinyl(:class='{ "hover-effect": effect === 2, hover }', :style='{ "max-width": maxWidth + "px" }')
     div.vinyl__content
 </template>
 
@@ -21,7 +21,8 @@ export default {
   name: 'PeculiarAlbum',
   data () {
     return {
-      parallaxDisabled: false,
+      hover: false,
+      effect: 0,
       maxWidth: window.innerWidth,
       scaleFactor: 6,
     }
@@ -29,16 +30,16 @@ export default {
   computed: {
     ...mapState(['mouse']),
     topColor () {
-      return (this.parallaxDisabled) ? `hsl(${(this.mouse.x / window.innerWidth) * 30 + 250}, 100%, 50%)` : '#0060ff'
+      return (this.effect === 0) ? `hsl(${(this.mouse.x / window.innerWidth) * 30 + 250}, 100%, 50%)` : '#0060ff'
     },
     bottomColor () {
-      return (this.parallaxDisabled) ? `hsl(${(this.mouse.y / window.innerHeight) * 25 + 35}, 100%, 50%)` : '#ffba00'
+      return (this.effect === 0) ? `hsl(${(this.mouse.y / window.innerHeight) * 25 + 35}, 100%, 50%)` : '#ffba00'
     },
     xOffset () {
-      return (this.parallaxDisabled) ? 0 : (-1 * this.mouse.x / window.innerWidth * this.scaleFactor)
+      return (this.effect === 1) ? (-1 * this.mouse.x / window.innerWidth * this.scaleFactor) : 0
     },
     yOffset () {
-      return (this.parallaxDisabled) ? 0 : (-1 * this.mouse.y / window.innerHeight * this.scaleFactor)
+      return (this.effect === 1) ? (-1 * this.mouse.y / window.innerHeight * this.scaleFactor) : 0
     }
   },
   methods: {
@@ -56,8 +57,8 @@ export default {
     }
   },
   mounted () {
-    // 50/50 chance to get a random effect
-    if (Math.random() < 0.5) this.parallaxDisabled = true
+    this.effect = Math.floor(Math.random() * 3)
+    console.log(this.effect)
 
     this.$nextTick(() => {
       this.updateWindowSize()
@@ -125,9 +126,22 @@ $gradient-blue: #0060ff;
 
   z-index: 1;
 
-  transform: translateX(40%);
+  transform: rtranslateX(40%);
 
   cursor: pointer;
+
+  &.hover-effect {
+    transform: translateX(20%);
+    transition: transform .5s;
+
+    &.hover {
+      transform: translateX(25%);
+    }
+
+    &:hover {
+      transform: translateX(40%);
+    }
+  }
 
   &::after {
     content: '';
@@ -144,6 +158,8 @@ $gradient-blue: #0060ff;
   
     background: url('/images/vinyl.png') no-repeat center center;
     background-size: auto 100%;
+
+    pointer-events: none;
   }
 }
 
@@ -163,7 +179,7 @@ $gradient-blue: #0060ff;
   padding: 2.5%;
   box-sizing: border-box;
 
-  background: url('/images/gold.jpg') no-repeat center center;
+  background: url('/images/gold-1000.jpg') no-repeat center center;
   background-size: cover;
 }
 
@@ -177,8 +193,7 @@ $gradient-blue: #0060ff;
 .flower__wrapper {
   position: relative;
   flex: 1 1 80%;
-  background: url('/images/gradient-noise-1000.png') no-repeat center center,
-              linear-gradient(to bottom right, $gradient-blue 30%, $gradient-yellow);
+  background: linear-gradient(to bottom right, $gradient-blue 30%, $gradient-yellow);
   background-size: cover;
 
   overflow: hidden;
@@ -194,8 +209,6 @@ $gradient-blue: #0060ff;
     background-size: cover;
   }
 }
-
-
 
 .felt__wrapper {
   position: relative;

@@ -37,7 +37,7 @@ export default {
   },
   watch: {
     hidden(){
-      setTimeout(()=> {
+      setTimeout(() => {
         this.hidden = true
       }, 20000)
     }

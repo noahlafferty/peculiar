@@ -10,7 +10,7 @@ div.peculiar-album__wrapper
           div.felt__wrapper
             div.felt
       div.marble
-  a.vinyl(:style='{ "max-width": maxWidth + "px" }', href='https://i.pinimg.com/originals/d9/b0/de/d9b0dea369b823e22766782b9518e600.jpg')
+  a.vinyl(:style='{ "max-width": maxWidth + "px" }')
     div.vinyl__content
 </template>
 
@@ -177,7 +177,7 @@ $gradient-blue: #0060ff;
 .flower__wrapper {
   position: relative;
   flex: 1 1 80%;
-  background: url('/images/gradient-noise.png') no-repeat center center,
+  background: url('/images/gradient-noise-1000.png') no-repeat center center,
               linear-gradient(to bottom right, $gradient-blue 30%, $gradient-yellow);
   background-size: cover;
 
@@ -190,7 +190,7 @@ $gradient-blue: #0060ff;
     top: -10%;
     left: -10%;
 
-    background: url('/images/flowers.png') no-repeat center center;
+    background: url('/images/flowers-1000.png') no-repeat center center;
     background-size: cover;
   }
 }
@@ -206,7 +206,7 @@ $gradient-blue: #0060ff;
 .felt {
   height: 100%;
 
-  background: url('/images/title.jpg') no-repeat center center;
+  background: url('/images/title-1000.jpg') no-repeat center center;
   background-size: cover;
   // filter: hue-rotate(160deg);
 }
@@ -218,7 +218,7 @@ $gradient-blue: #0060ff;
   top: 0;
   right: 21%;
 
-  background: url('/images/marble.jpg') no-repeat center center;
+  background: url('/images/marble-1000.jpg') no-repeat center center;
   background-size: cover;
 }
 </style>

@@ -4,7 +4,8 @@ div#app(@mousemove='updateCoordinates')
   PeculiarAlbum
   SwirlBreak
   JapaneseSentence
-  FixedMarquee(message='eat your broccoli')
+  FixedMarquee
+  SpotifyPlayer
 </template>
 
 <script>
@@ -15,7 +16,8 @@ export default {
     PeculiarAlbum: () => import('./components/PeculiarAlbum'),
     SwirlBreak: () => import('./components/SwirlBreak'),
     JapaneseSentence: () => import('./components/JapaneseSentence'),
-    FixedMarquee: () => import('./components/FixedMarquee')
+    FixedMarquee: () => import('./components/FixedMarquee'),
+    SpotifyPlayer: () => import('./components/SpotifyPlayer')
   },
   methods: {
     updateCoordinates (event) {

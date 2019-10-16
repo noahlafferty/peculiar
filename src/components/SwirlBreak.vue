@@ -3,6 +3,11 @@ div.swirl-break(@click='handleClick', :style='{ filter: `hue-rotate(${scrollPosi
 </template>
 
 <script>
+import Vue from 'vue'
+import FixedMarquee from './FixedMarquee'
+
+let Marquee = Vue.extend(FixedMarquee)
+
 export default {
   name: 'SwirlBreak',
   data () {
@@ -16,15 +21,16 @@ export default {
       this.scrollPosition = window.scrollY
     },
     handleClick () {
-      this.$root.$emit('swirl-click')
+      // this.$root.$emit('swirl-click')
+      let marquee = new Marquee()
+      marquee.$mount()
+      document.getElementById('app').appendChild(marquee.$el)
     }
   },
   mounted () {
-    // if (Math.random() < 0.3333) {
     this.$nextTick(() => {
       window.addEventListener('scroll', this.updateScrollPosition)
     })
-    // }
   }
 }
 </script>

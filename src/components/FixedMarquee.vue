@@ -30,10 +30,9 @@ export default {
     this.message = this.generateMessage(10)
     this.height = this.message.split("").length * 44
 
-
-    this.$root.$on('swirl-click', () => {
+   setTimeout(() => {
       this.active = true
-    })
+    }, Math.random() * 5000)
   }
 }
 </script>

@@ -1,5 +1,5 @@
 <template lang='pug'>
-div.swirl-break(:style='{ filter: `hue-rotate(${scrollPosition * shiftFactor}deg)` }')
+div.swirl-break(@click='handleClick', :style='{ filter: `hue-rotate(${scrollPosition * shiftFactor}deg)` }')
 </template>
 
 <script>
@@ -7,13 +7,16 @@ export default {
   name: 'SwirlBreak',
   data () {
     return {
-      shiftFactor: 0.05,
+      shiftFactor: 0.065,
       scrollPosition: 0
     }
   },
   methods: {
     updateScrollPosition () {
       this.scrollPosition = window.scrollY
+    },
+    handleClick () {
+      this.$root.$emit('swirl-click')
     }
   },
   mounted () {

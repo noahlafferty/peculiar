@@ -57,7 +57,7 @@ export default {
     }
   },
   mounted () {
-    this.effect = Math.floor(Math.random() * 3)
+    this.effect = Math.floor(Math.random() * 2)
 
     this.$nextTick(() => {
       this.updateWindowSize()

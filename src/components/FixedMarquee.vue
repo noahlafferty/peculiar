@@ -12,10 +12,6 @@ export default {
       left: 5,
       height: 0,
       active: false,
-      messages: [
-        'eat your broccoli',
-        'ain\'t nobody got time for that'
-      ],
       message: null,
       charSet: ["歯", "型", "バ", "ァ", "ニ", "ボ", "ソ", "と", "あ", "ぽ", "千", "喜", "良", "タ", "ツ"]
     }
@@ -34,9 +30,10 @@ export default {
     this.message = this.generateMessage(10)
     this.height = this.message.split("").length * 44
 
-    setTimeout(() => {
+
+    this.$root.$on('swirl-click', () => {
       this.active = true
-    }, 500)
+    })
   }
 }
 </script>

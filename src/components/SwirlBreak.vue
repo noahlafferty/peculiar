@@ -1,5 +1,5 @@
 <template lang='pug'>
-div.swirl-break(@click='handleClick', :style='{ filter: `hue-rotate(${scrollPosition * shiftFactor}deg)` }')
+div.swirl-break(@click='handleClick', :class='{ clicked }', :style='{ filter: `hue-rotate(${scrollPosition * shiftFactor}deg)` }')
 </template>
 
 <script>
@@ -12,6 +12,7 @@ export default {
   name: 'SwirlBreak',
   data () {
     return {
+      clicked: false,
       shiftFactor: 0.065,
       scrollPosition: 0
     }
@@ -24,11 +25,17 @@ export default {
       let marquee = new Marquee()
       marquee.$mount()
       document.getElementById('app').appendChild(marquee.$el)
+
+      this.clicked = false
+      this.clicked = true
+      setTimeout(() => {
+        this.clicked = false
+      }, 1000)
     }
   },
   mounted () {
     this.$nextTick(() => {
-      window.addEventListener('scroll', this.updateScrollPosition)
+      // window.addEventListener('scroll', this.updateScrollPosition)
     })
   }
 }
@@ -42,5 +49,19 @@ export default {
 
   background: url('/images/iri.jpg') no-repeat center center;
   background-size: 100% 100%;
+
+  &.clicked {
+    animation: glow-up 1s;
+  }
+}
+
+@keyframes glow-up {
+  0% {
+    filter: hue-rotate(0);
+  }
+
+  30% {
+    filter: hue-rotate(50deg);
+  }
 }
 </style>

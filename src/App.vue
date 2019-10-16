@@ -4,7 +4,7 @@ div#app(ref='app', @mousemove='updateCoordinates')
   PeculiarAlbum
   SwirlBreak
   JapaneseSentence
-  SpotifyPlayer
+  //- SpotifyPlayer
 </template>
 
 <script>

@@ -1,10 +1,28 @@
 <template lang='pug'>
-div.swirl-break
+div.swirl-break(:style='{ filter: `hue-rotate(${scrollPosition * shiftFactor}deg)` }')
 </template>
 
 <script>
 export default {
-  name: 'SwirlBreak'
+  name: 'SwirlBreak',
+  data () {
+    return {
+      scrollPosition: 0,
+      shiftFactor: 0.3
+    }
+  },
+  methods: {
+    updateScrollPosition () {
+      this.scrollPosition = window.scrollY
+    }
+  },
+  mounted () {
+    if (Math.random() < 0.3333) {
+      this.$nextTick(() => {
+        window.addEventListener('scroll', this.updateScrollPosition)
+      })
+    }
+  }
 }
 </script>
 

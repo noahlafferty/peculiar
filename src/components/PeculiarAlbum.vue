@@ -58,7 +58,6 @@ export default {
   },
   mounted () {
     this.effect = Math.floor(Math.random() * 3)
-    console.log(this.effect)
 
     this.$nextTick(() => {
       this.updateWindowSize()
@@ -126,13 +125,13 @@ $gradient-blue: #0060ff;
 
   z-index: 1;
 
-  transform: rtranslateX(40%);
+  transform: translateX(40%);
+  transition: transform .5s;
 
   cursor: pointer;
 
   &.hover-effect {
     transform: translateX(20%);
-    transition: transform .5s;
 
     &.hover {
       transform: translateX(25%);

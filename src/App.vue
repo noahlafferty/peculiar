@@ -4,6 +4,7 @@ div#app(@mousemove='updateCoordinates')
   PeculiarAlbum
   SwirlBreak
   JapaneseSentence
+  FixedMarquee(message='eat your broccoli')
 </template>
 
 <script>
@@ -13,7 +14,8 @@ export default {
     SiteNav: () => import('./components/SiteNav'),
     PeculiarAlbum: () => import('./components/PeculiarAlbum'),
     SwirlBreak: () => import('./components/SwirlBreak'),
-    JapaneseSentence: () => import('./components/JapaneseSentence')
+    JapaneseSentence: () => import('./components/JapaneseSentence'),
+    FixedMarquee: () => import('./components/FixedMarquee')
   },
   methods: {
     updateCoordinates (event) {

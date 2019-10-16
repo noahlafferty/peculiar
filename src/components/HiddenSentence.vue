@@ -1,5 +1,5 @@
 <template lang='pug'>
-p
+p.hidden-sentence
   HiddenWord(v-for='(word, index) in sentenceArray', :word='word', :key='index')
 </template>
 
@@ -19,4 +19,7 @@ export default {
 </script>
 
 <style lang='scss'>
+.hidden-sentence {
+  cursor: crosshair;
+}
 </style>

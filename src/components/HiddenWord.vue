@@ -1,7 +1,7 @@
 <template lang='pug'>
-span.hidden-word(@mouseover='hidden=false') 
-  span(v-if='!hidden') {{word}}
-  span(v-else) {{secret}}
+span.hidden-word(@click='hidden = false', :class='{ green: word === "420.0" }') 
+  span(v-if='!hidden') {{ word }}
+  span(v-else) {{ secret }}
 </template>
 
 <script>
@@ -10,6 +10,7 @@ export default {
   props: ['word'],
   data() {
     return { 
+      hovered: false,
       secret: null,
       hidden: (Math.random() > 0.25) ? false : true,
       charSet: ["歯", "型", "バ", "ァ", "ニ", "ボ", "ソ", "と", "あ", "ぽ", "千", "喜", "良", "タ", "ツ"]
@@ -53,7 +54,28 @@ export default {
 </script>
 
 <style lang='scss'>
+@import '../scss/_variables.scss';
+
+.hidden-word {
+  $transition-time: .5s;
+
+  color: $black;
+  text-shadow: 0 0 25px rgba(255, 8, 103, 0);
+
+  transition: color $transition-time, text-shadow $transition-time;
+
+  &:hover {
+    color: rgb(255, 8, 103);
+    text-shadow: 0 0 5px rgba(255, 8, 103, .5);
+  }
+
+  &.green:hover {
+    color: rgb(6, 136, 2);
+    text-shadow: 0 0 5px rgba(6, 173, 0, .5);
+  }
+}
+
 .hidden-word + .hidden-word {
-  margin-left: 0.5rem;
+  padding-left: 0.5rem;
 }
 </style>

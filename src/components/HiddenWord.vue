@@ -41,7 +41,7 @@ export default {
   },
   watch: {
     hidden(){
-      setTimeout(()=> {
+      setTimeout(() => {
         this.hidden = true
       }, this.getRandomResetTime(20, 35))
     }

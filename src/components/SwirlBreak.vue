@@ -21,7 +21,6 @@ export default {
       this.scrollPosition = window.scrollY
     },
     handleClick () {
-      // this.$root.$emit('swirl-click')
       let marquee = new Marquee()
       marquee.$mount()
       document.getElementById('app').appendChild(marquee.$el)

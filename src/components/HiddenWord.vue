@@ -1,5 +1,5 @@
 <template lang='pug'>
-span.hidden-word(@click='hidden = false', :class='{ green: word === "420.0" }') 
+span.hidden-word(@click='hidden = false', :class='{ green: word === "420.0", hidden }') 
   span(v-if='!hidden') {{ word }}
   span(v-else) {{ secret }}
 </template>
@@ -65,8 +65,15 @@ export default {
   transition: color $transition-time, text-shadow $transition-time;
 
   &:hover {
-    color: rgb(255, 8, 103);
-    text-shadow: 0 0 5px rgba(255, 8, 103, .5);
+    // color: rgb(255, 8, 103);
+    // text-shadow: 0 0 5px rgba(255, 8, 103, .5);
+    color: rgb(8, 164, 255);
+    text-shadow: 0 0 5px rgba(8, 185, 255, 0.5);
+  }
+
+  &.hidden:hover {
+    color: rgb(255, 8, 8);
+    text-shadow: 0 0 5px rgba(255, 8, 8, 0.5);
   }
 
   &.green:hover {

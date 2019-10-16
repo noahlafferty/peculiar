@@ -7,8 +7,8 @@ export default {
   name: 'SwirlBreak',
   data () {
     return {
-      scrollPosition: 0,
-      shiftFactor: 0.3
+      shiftFactor: 0.05,
+      scrollPosition: 0
     }
   },
   methods: {
@@ -17,11 +17,11 @@ export default {
     }
   },
   mounted () {
-    if (Math.random() < 0.3333) {
-      this.$nextTick(() => {
-        window.addEventListener('scroll', this.updateScrollPosition)
-      })
-    }
+    // if (Math.random() < 0.3333) {
+    this.$nextTick(() => {
+      window.addEventListener('scroll', this.updateScrollPosition)
+    })
+    // }
   }
 }
 </script>

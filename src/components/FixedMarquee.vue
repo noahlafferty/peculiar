@@ -1,6 +1,6 @@
 <template lang='pug'>
 div.marquee__wrapper(:style='{ left: `${left}vw` }')
-  div.marquee(:style='{ height: `${height}px`, top: (active) ? `${-1 * height}px` : "100%", active }')
+  div.marquee(v-if='message', :style='{ height: `${height}px`, top: (active) ? `${-1 * height}px` : "100%", active }')
     p.letter(v-for='letter in message.split("")') {{ letter }}
 </template>
 
@@ -49,6 +49,7 @@ export default {
   top: 0;
 
   z-index: 1000;
+  pointer-events: none;
 }
 
 .marquee {

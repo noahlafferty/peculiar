@@ -128,8 +128,9 @@ $gradient-blue: #0060ff;
   transform: translateX(40%);
   transition: transform .5s;
 
-  cursor: pointer;
-
+  // cursor: pointer;
+ // kostas was here mofos 
+ 
   &.hover-effect {
     transform: translateX(20%);
 

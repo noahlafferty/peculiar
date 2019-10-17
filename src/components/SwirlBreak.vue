@@ -1,5 +1,5 @@
 <template lang='pug'>
-div.swirl-break(@click='handleClick', :class='{ clicked }', :style='{ filter: `hue-rotate(${scrollPosition * shiftFactor}deg)` }')
+div.swirl-break(@click='handleClick', :class='{ clicked }')
   div.character 
     span(v-if='life') 命
     span(v-else) 死
@@ -17,30 +17,25 @@ export default {
     return {
       clicked: false,
       shiftFactor: 0.065,
-      scrollPosition: 0,
-      life: false
+      life: false,
+      resetTimeout: null
     }
   },
   methods: {
-    updateScrollPosition () {
-      this.scrollPosition = window.scrollY
-    },
     handleClick () {
       let marquee = new Marquee()
       marquee.$mount()
       document.getElementById('app').appendChild(marquee.$el)
 
-      this.life = !this.life
-      this.clicked = true
-      setTimeout(() => {
-        this.clicked = false
-      }, 1000)
+      if (!this.clicked) {
+        this.life = !this.life
+        this.clicked = true
+        clearTimeout(this.resetTimeout)
+        this.resetTimeout = setTimeout(() => {
+          this.clicked = false
+        }, 1000)
+      }
     }
-  },
-  mounted () {
-    this.$nextTick(() => {
-      // window.addEventListener('scroll', this.updateScrollPosition)
-    })
   }
 }
 </script>
@@ -57,6 +52,8 @@ export default {
 
   background: url('/images/iri.jpg') no-repeat center center;
   background-size: 100% 100%;
+
+  cursor: pointer;
 
   &.clicked {
     animation: glow-up 1s;
@@ -80,8 +77,12 @@ export default {
     filter: hue-rotate(0);
   }
 
-  30% {
+  20% {
     filter: hue-rotate(50deg);
+  }
+
+  100% {
+    filter: hue-rotate(0deg);
   }
 }
 
@@ -90,7 +91,7 @@ export default {
     opacity: 0;
   }
 
-  30% {
+  20% {
     opacity: 0.1;
   }
 }

@@ -2,8 +2,8 @@
 div
   nav.sitenav.left
     a(href='https://open.spotify.com/artist/7sO3BcevkIUXu5NcUNBVfO?si=NRbFDvtGQEamdtZdjQQk7Q', target='_blank') Spotify
-    a.shadow(href='https://www.facebook.com/modestaband/', target='_blank') Facebook
-    a.spin(href='https://soundcloud.com/modestaband', target='_blank') SoundCloud
+    a(href='https://www.facebook.com/modestaband/', target='_blank') Facebook
+    a(href='https://soundcloud.com/modestaband', target='_blank') SoundCloud
   nav.sitenav.right
     a(href='https://twitter.com/modestaband', target='_blank') Twitter
     a(href='https://www.instagram.com/modestaband/', target='_blank') Instagram
@@ -60,38 +60,6 @@ export default {
     top: 100%;
     left: auto;
     right: 0;
-  }
-
-  .spin {
-    &:hover {
-      animation: spin 30s infinite;
-    }
-  }
-
-  .shadow {
-    &:hover {
-      animation: shadow 5s infinite;
-    }
-  }
-}
-
-@keyframes spin {
-  0% {
-    transform: rotate3d(0, 0, 0, 0);
-  }
-
-  50% {
-    transform: rotate3d(1, 1, -1, 240deg);
-  }
-}
-
-@keyframes shadow {
-  0% {
-    text-shadow: 0 0 0 $tangerine;
-  }
-
-  50% {
-    text-shadow: 10px 10px 0 $tangerine;
   }
 }
 </style>

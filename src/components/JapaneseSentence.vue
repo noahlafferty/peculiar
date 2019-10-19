@@ -1,8 +1,8 @@
 <template lang='pug'>
 div#lyrics.japanese-sentence__wrapper
   div.japanese-sentence
-    div.song(v-for='song in songs')
-      h3 {{song.title}}
+    div.song(v-for='(song, index) in songs')
+      h3(@click='(index === 2) ? $root.$emit("found-the-secret") : null') {{ song.title }}
       HiddenSentence(v-for='(line, index) in song.lyrics', :sentence='line', :key='index')
 </template>
 

@@ -17,21 +17,21 @@ export default {
     return {
       clicked: false,
       shiftFactor: 0.065,
-      life: false,
-      resetTimeout: null
+      life: false
     }
   },
   methods: {
     handleClick () {
-      let marquee = new Marquee()
-      marquee.$mount()
-      document.getElementById('app').appendChild(marquee.$el)
-
       if (!this.clicked) {
+        let marquee = new Marquee()
+        marquee.$mount()
+        document.getElementById('app').appendChild(marquee.$el)
+
         this.life = !this.life
         this.clicked = true
-        clearTimeout(this.resetTimeout)
-        this.resetTimeout = setTimeout(() => {
+
+        // reset click state after 1 second
+        setTimeout(() => {
           this.clicked = false
         }, 1000)
       }

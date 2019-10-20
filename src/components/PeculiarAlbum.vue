@@ -10,7 +10,7 @@ div.peculiar-album__wrapper
           div.felt__wrapper
             div.felt
       div.marble
-  a.vinyl(:class='{ "hover-effect": effect === 2, hover }', :style='{ "max-width": maxWidth + "px" }')
+  a.vinyl(:style='{ "max-width": maxWidth + "px" }')
     div.vinyl__content
 </template>
 
@@ -21,7 +21,6 @@ export default {
   name: 'PeculiarAlbum',
   data () {
     return {
-      hover: false,
       effect: 0,
       maxWidth: window.innerWidth,
       scaleFactor: 6,
@@ -68,8 +67,8 @@ export default {
 </script>
 
 <style lang='scss'>
-$gradient-yellow: #ffba00;
-$gradient-blue: #0060ff;
+@import '../scss/_variables.scss';
+@import '../scss/_mixins.scss';
 
 .peculiar-album__wrapper {
   display: flex;
@@ -126,22 +125,9 @@ $gradient-blue: #0060ff;
   z-index: 1;
 
   transform: translateX(40%);
-  transition: transform .5s;
+  transition: translate .5s;
 
-  // cursor: pointer;
- // kostas was here mofos 
- 
-  &.hover-effect {
-    transform: translateX(20%);
-
-    &.hover {
-      transform: translateX(25%);
-    }
-
-    &:hover {
-      transform: translateX(40%);
-    }
-  }
+  cursor: pointer;
 
   &::after {
     content: '';
@@ -160,6 +146,11 @@ $gradient-blue: #0060ff;
     background-size: auto 100%;
 
     pointer-events: none;
+  }
+
+  @include respond-to('small') {
+    transform: translateX(0);
+    transform: translateY(40%);
   }
 }
 

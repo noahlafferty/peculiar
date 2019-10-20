@@ -125,7 +125,6 @@ export default {
   z-index: 1;
 
   transform: translateX(40%);
-  transition: translate .5s;
 
   cursor: pointer;
 

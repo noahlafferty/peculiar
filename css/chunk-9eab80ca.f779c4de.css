@@ -1,0 +1,1 @@
+.hidden-word{color:#222;text-shadow:0 0 25px rgba(255,8,103,0);-webkit-transition:color .5s,text-shadow .5s;transition:color .5s,text-shadow .5s}.hidden-word:hover{color:#ff0867;text-shadow:0 0 5px rgba(255,8,103,.5)}.hidden-word.green:hover{color:#068802;text-shadow:0 0 5px rgba(6,173,0,.5)}.hidden-word+.hidden-word{padding-left:.5rem}

@@ -20,7 +20,7 @@ export default {
 @import '../scss/_variables';
 
 .sitenav {
-  position: fixed;
+  position: absolute;
   display: flex;
   justify-content: center;
 
